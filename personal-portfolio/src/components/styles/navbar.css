@@ -5,7 +5,6 @@
 .flip-container:hover .flipper {
   transform: rotateY(180deg);
 }
-
 .flip-container,
 .front,
 .back {
