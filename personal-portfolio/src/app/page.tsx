@@ -6,6 +6,7 @@ export default function Home() {
     <div
       className="w-full h-screen flex flex-col items-center relative p-5"      
     >
+      
       <Navbar />
       <SparklesBackground/>
     </div>
