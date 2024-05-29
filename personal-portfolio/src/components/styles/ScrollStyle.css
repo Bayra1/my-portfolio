@@ -1,25 +1,58 @@
 /* styles/ScrollStyle.css */
 
 section {
-    display: grid;
-    place-items: center;
-    align-content: center;
-    min-height: 100vh;
-    padding: 14px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+  padding: 14px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, filter 1s,
+    transform 1s;
+  filter: blur(5px);
+  transform: translateX(-100%);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out, filter 1s, transform 1s;
-    filter: blur(5px);
-    transform: translateX(-100%);
+  10% {
+    transform: rotate(16deg);
   }
-  
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-    transform: translateX(0);
+  20% {
+    transform: rotate(-6deg);
   }
-  
+  30% {
+    transform: rotate(16deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(16deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.waving-hand {
+  animation: wave 2.1s 0.6s infinite;
+  transform-origin: 75% 75%;
+  display: inline-block;
+}
