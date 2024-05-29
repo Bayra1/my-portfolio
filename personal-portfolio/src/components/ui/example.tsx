@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { GreetingWords } from "../Text/Hello";
 import { SparklesCore } from "../ui/sparkles";
 
 export function SparklesBackground() {
@@ -16,9 +16,6 @@ export function SparklesBackground() {
           particleColor="#FFFFFF"
         />
       </div>
-      {/* <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">
-        Ready To 
-      </h1> */}
     </div>
   );
 }
