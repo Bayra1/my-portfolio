@@ -1,5 +1,4 @@
 "use client";
-import { GreetingWords } from "../Text/Hello";
 import { SparklesCore } from "../ui/sparkles";
 
 export function SparklesBackground() {

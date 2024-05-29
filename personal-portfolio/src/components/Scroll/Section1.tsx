@@ -3,6 +3,7 @@ import "../styles/ScrollStyle.css";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { AboutMe } from "../Text/About";
+import { FlipWords } from "../ui/flip-words";
 
 const ScrollSection_1 = () => {
   const { ref: leftRef, inView: leftInView } = useInView({
@@ -30,6 +31,8 @@ const ScrollSection_1 = () => {
     }
   }, [leftInView, rightInView]);
 
+  const words = ['Hey ?', "There"]
+
   return (
     <section
       id="hidden"
@@ -38,12 +41,13 @@ const ScrollSection_1 = () => {
       <div
         ref={leftRef}
         className="left-section flex flex-col gap-3 mt-[120px] fade-in"
-      >
-        <div className="text-4xl text-white italic">
-          Hey there<span className="waving-hand ml-2">👋</span>
-        </div>
+      >       
+        <span className="text-4xl text-white flex flex-row italic">
+          <FlipWords words={words} /> <br />
+        </span>
         <AboutMe />
         <img
+          id="One-eye-minion"
           style={{
             width: "500px",
             height: "500px",
@@ -59,6 +63,7 @@ const ScrollSection_1 = () => {
         className="right-section flex flex-col gap-3 mt-[120px] fade-in"
       >
         <img
+        id="One-eye-minion"
           style={{
             width: "500px",
             height: "500px",
@@ -68,13 +73,15 @@ const ScrollSection_1 = () => {
           src="https://assets.awwwards.com/awards/submissions/2024/05/664c3c397fb49775994305.png"
           alt="minion"
         />
-        <span className="text-4xl text-white">My strong point</span>
-        <p className="w-[500px] text-white mt-[12px]">
-          My name is Sukhbaatar Ikhbayar, and I am a dedicated developer with a
-          passion for creating exceptional websites. I thrive on challenges and
-          am highly adaptable, allowing me to effectively tackle complex tasks
-          and deliver high-quality results.
-        </p>
+        <span className="text-4xl text-white">
+          <FlipWords words={['Strong', "Points"]} /> <br />
+        </span>
+        <ul className="w-[500px] text-white mt-[12px]">
+          <li>Respectfulnesss</li>
+          <li>Responsible</li>
+          <li>TeamWork</li>
+          <li>Optimistic</li>
+        </ul>
       </div>
     </section>
   );

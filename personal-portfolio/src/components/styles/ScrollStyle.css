@@ -56,3 +56,20 @@ section {
   transform-origin: 75% 75%;
   display: inline-block;
 }
+
+#One-eye-minion {
+  transition: transform 0.3s ease;
+}
+
+#One-eye-minion:hover {
+  animation: rotate-disc 2.1s linear infinite;
+}
+
+@keyframes rotate-disc {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
