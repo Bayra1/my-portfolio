@@ -8,7 +8,7 @@
 .flip-container,
 .front,
 .back {
-    margin-top: 20px;
+  margin-top: 20px;
   width: 250px;
   height: 100px;
 }
@@ -35,4 +35,19 @@
 
 .back {
   transform: rotateY(180deg);
+}
+
+.navbarClass,
+.sparkleBackground,
+.gradient-text {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.main-section {
+  transition: background-color 0.5s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
 }

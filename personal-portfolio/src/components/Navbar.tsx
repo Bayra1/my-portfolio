@@ -13,7 +13,7 @@ export const Navbar = () => {
   };
 
   return (
-    <main className="w-[1200px] z-10 h-[50px] flex justify-between items-center p-3-400">
+    <main className="navbarClass w-[1200px] z-10 h-[50px] flex justify-between items-center p-3-400">
       <button onClick={NavigateToHome}>
         <div className="flip-container">
           <div className="flipper">
