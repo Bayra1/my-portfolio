@@ -1,7 +1,7 @@
 import "./styles/3D_CubeStyle.css";
 export const Three_D_Cube = () => {
   return (
-    <div className="container infin z-10 bg-white">
+    <div className="container z-10">
       <div id="cube">
         <div className="side" id="front">
           <img

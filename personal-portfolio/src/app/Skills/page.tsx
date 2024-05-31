@@ -37,8 +37,10 @@ const Skills = () => {
         </div>
       </div>
       {/* {!hideState && <WavyBackgroundCom />} */}
-      <Three_D_Cube />
-      <Three_D_Cube />
+      <div className="w-full h-full flex flex-row">
+        <Three_D_Cube />
+        <Three_D_Cube />
+      </div>
     </div>
   );
 };
