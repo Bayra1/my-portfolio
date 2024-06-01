@@ -32,7 +32,6 @@ export const Navbar = () => {
           </div>
         </div>
       </button>
-
       <div className="flex flex-row gap-4">
         <AboutButton name="About" path="About" />
         <AboutButton name="Skills" path="Skills" />
