@@ -45,12 +45,8 @@ const Skills = () => {
         <Three_D_Cube />
         <Three_D_Cube />
       </div> */}
-      <section className="w-fit h-full flex justify-between mt-5 gap-5">
-        <ImagesAnimation2 />
-        <div className="w-[5px] bg-[#FFF] h-[250px] rounded-xl"></div>
-        <span className="text-white flex justify-center items-center">
-          Tech Stacks
-        </span>
+      <section className="w-full h-full flex justify-center mt-5 gap-5">
+        <ImagesAnimation2 />      
         {/* <ImagesAnimation />
         <ImagesAnimation2 />
         <ImagesAnimation3 />
