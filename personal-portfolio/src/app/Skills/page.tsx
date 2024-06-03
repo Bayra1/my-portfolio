@@ -27,7 +27,7 @@ const Skills = () => {
   // };
 
   return (
-    <main className="main-section w-screen min-h-screen relative bg-black flex flex-col items-center p-4 overflow-hidden">
+    <main className="main-section w-screen h-fit relative bg-black flex flex-col items-center p-4 overflow-hidden">
       <Navbar />
       <SparkeBackground />
       {/* <div className="w-[1200px] relative mt-4 h-full flex justify-center items-center z-10">
@@ -45,13 +45,12 @@ const Skills = () => {
         <Three_D_Cube />
         <Three_D_Cube />
       </div> */}
-      <section className="w-full h-full flex justify-center mt-5 gap-5">
-        <ImagesAnimation2 />      
-        {/* <ImagesAnimation />
+      <section className="w-fit p-[60px] gap-10 h-full flex-col items-center flex justify-center mt-5">          
+        <ImagesAnimation />
         <ImagesAnimation2 />
         <ImagesAnimation3 />
         <ImagesAnimation4 />
-        <ImagesAnimation5 /> */}
+        <ImagesAnimation5 />
       </section>
     </main>
   );
