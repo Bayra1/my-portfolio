@@ -1,5 +1,7 @@
-import { Navbar } from "@/components";
+import { Contact_Forms, Navbar } from "@/components";
 import { SparklesCore } from "@/components/ui/sparkles";
+import "../../components/styles/bubbleButton.css";
+import { FacebookSvG, GithubSvG, TwitterSvG } from "@/components/SvG";
 
 const Contact_Me = () => {
   return (
@@ -16,7 +18,14 @@ const Contact_Me = () => {
           particleColor="#9EA1D4"
         />
       </div>
-      <div className="w-[1200px] relative mt-4 h-full flex-wrap flex justify-between z-10"></div>
+      <div className="w-[1200px] relative mt-4 h-screen justify-center items-center flex z-10 flex-col">
+        <Contact_Forms />
+        <div className="w-[200px] mt-7 flex flex-row justify-between">
+          <FacebookSvG />
+          <TwitterSvG />
+          <GithubSvG />
+        </div>
+      </div>
     </div>
   );
 };

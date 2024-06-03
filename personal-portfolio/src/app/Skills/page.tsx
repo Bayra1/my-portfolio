@@ -12,7 +12,7 @@ const Skills = () => {
     <main className="main-section w-screen h-fit relative bg-black flex flex-col items-center p-4 overflow-hidden">
       <Navbar />
       <SparkeBackground />      
-      <section className="w-fit p-[60px] gap-10 h-full flex-col items-center flex justify-center mt-5">          
+      <section className="w-[1200px] p-[60px] gap-10 h-full flex-col items-center flex justify-center mt-5">          
         <ImagesAnimation />
         <ImagesAnimation2 />
         <ImagesAnimation3 />

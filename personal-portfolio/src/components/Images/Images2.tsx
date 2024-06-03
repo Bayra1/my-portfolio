@@ -32,7 +32,7 @@ export const ImagesAnimation2 = () => {
   };
 
   return (
-    <div className="flex flex-row w-[900px] justify-between">
+    <div className="flex flex-row w-full justify-between">
       <div className="gallery">
         <img
           onClick={() => handleClick("JavaScript")}

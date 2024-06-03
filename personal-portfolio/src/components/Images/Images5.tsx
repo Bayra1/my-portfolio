@@ -26,7 +26,7 @@ export const ImagesAnimation5 = () => {
     }
   };
   return (
-    <div className="flex flex-row w-[900px] justify-between">
+    <div className="flex flex-row w-full justify-between">
       <ul className="w-[500px] p-0 h-fit text-white">
         <li>{clickedImage}</li>
         <div>{clickedImage ? <li>{renderText()}</li> : ""}</div>
