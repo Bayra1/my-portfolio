@@ -1,7 +1,9 @@
+import "../styles/ScrollSection2.css"
 export const GithubSvG = () => {
   return (
     <a href="https://github.com/Bayra1" className="w-[35px] h-[35px] rounded-full flex justify-center items-center z-10 bg-white">
       <svg
+      className="github-svg"
         width="800px"
         height="800px"
         viewBox="0 0 20 20"
@@ -14,14 +16,14 @@ export const GithubSvG = () => {
         <g
           id="Page-1"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
         >
           <g
             id="Dribbble-Light-Preview"
             transform="translate(-140.000000, -7559.000000)"
-            fill="#000000"
+            fill="black"
           >
             <g id="icons" transform="translate(56.000000, 160.000000)">
               <path

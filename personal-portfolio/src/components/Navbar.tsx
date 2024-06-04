@@ -36,6 +36,9 @@ export const Navbar = () => {
         <AboutButton name="About" path="About" />
         <AboutButton name="Skills" path="Skills" />
         <AboutButton name="Projects" path="Projects" />
+        <a href="https://www.canva.com/design/DAGGhhgv_3M/mbjIp3HWfBxmJVQTtEszaA/view?utm_content=DAGGhhgv_3M&utm_campaign=designshare&utm_medium=link&utm_source=editor">
+          <AboutButton name="Resume" path="/" />
+        </a>
         <HireMeButton name="Contact me" path="Contact_Me" />
       </div>
     </main>

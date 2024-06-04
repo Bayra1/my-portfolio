@@ -1,62 +1,94 @@
+"use client"
+import { useRef } from "react";
 import "../components/styles/bubbleButton.css";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FacebookSvG, GithubSvG, TwitterSvG } from "./SvG";
+
 export const Contact_Forms = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const name = useRef<HTMLInputElement>(null);
+  const email = useRef<HTMLInputElement>(null);
+  const message = useRef<HTMLTextAreaElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (
+      name.current?.value === "" ||
+      email.current?.value === "" ||
+      message.current?.value === ""
+    ) {
+      toast.error("Empty message cannot be sent!");
+      return;
+    }
+
+    emailjs
+      .sendForm(
+        "service_bpuxvty",
+        "template_zzeuv8f",
+        form.current!,
+        // process.env.REACT_APP_EMAILJS_PUBLIC_KEY || ""
+        "zkwhjEycXEDIofmFf"
+      )
+      .then(
+        () => {
+          toast.success("Your message has been sent successfully!");   
+          if (name.current) name.current.value = "";
+          if (email.current) email.current.value = "";
+          if (message.current) message.current.value = "";
+        },
+        (error) => {
+          toast.error("Failed to send the message. Please try again.");
+          console.error("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
-    <div className="w-[500px] flex flex-col h-[500px] gap-4 border rounded-xl p-4">
-      <div className="flex flex-col items-start gap-3">
-        <span className="text-white italic text-lg">Name</span>
+    <form className="form-container" ref={form} onSubmit={sendEmail}>
+      <div className="input-group">
+        <label className="input-label">Name</label>
         <input
-          style={{
-            width: "100%",
-            height: "50px",
-            background: "#353535",
-            borderRadius: "5px",
-            padding: "5px",
-            backgroundColor: "#888A88",
-            color: "white",
-            fontWeight: "bolder",
-          }}
-          type="text"
+          ref={name}
+          className="input-field"
           placeholder="Name"
+          type="text"
+          name="user_name"
         />
       </div>
-      <div className="flex flex-col items-start gap-3">
-        <span className="text-white italic text-lg">Email</span>
+
+      <div className="input-group">
+        <label className="input-label">Email</label>
         <input
-          style={{
-            width: "100%",
-            height: "50px",
-            background: "#353535",
-            borderRadius: "5px",
-            padding: "5px",
-            backgroundColor: "#888A88",
-            color: "white",
-            fontWeight: "bolder",
-          }}
-          type="text"
+          ref={email}
+          className="input-field"
+          type="email"
+          name="user_email"
           placeholder="Email"
         />
       </div>
 
-     <div className="flex flex-col items-start gap-3">
-     <span className="text-white italic text-lg">Message</span>
-     <textarea
-        style={{
-          width: "100%",
-          height: "150px",
-          background: "#353535",
-          borderRadius: "5px",
-          padding: "5px",
-          backgroundColor: "#888A88",
-          color: "white",
-          fontWeight: "bolder",
-        }}
-        placeholder="Message"
-      />
-     </div>
+      <div className="input-group">
+        <label className="input-label">Message</label>
+        <textarea
+          ref={message}
+          className="input-field textarea-field"
+          placeholder="Message"
+          name="message"
+        />
+      </div>
 
-      <button className="text-white italic w-full h-[50px] bg-[#202621] rounded-md">
-        Send Message
+      <button className="submit-button" type="submit">
+        Send
       </button>
-    </div>
+      <div className="w-full relative h-[50px]  justify-center items-center gap-10 flex flex-row">
+          <FacebookSvG />
+          <TwitterSvG />
+          <GithubSvG />
+        </div>
+      <ToastContainer position="top-center" />
+    </form>
   );
 };

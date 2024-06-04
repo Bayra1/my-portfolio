@@ -27,4 +27,32 @@ section {
     filter: blur(0);
     transform: translateY(0);
   }
-  
+
+  .facebook-svg {    
+    height: fit-content;
+    transition: 0.3s ease-in-out;  
+  }
+
+  .facebook-svg:hover {    
+    fill:#1877F2 ;
+    transform: scale(0.7);
+  }
+
+  .twitter-svg {
+    height: fit-content;  
+    transition: 0.3s ease-in-out;  
+  }
+
+  .twitter-svg:hover {
+    fill: #1DA1F2;
+    transform: scale(0.7);    
+  }
+
+  .github-svg {
+    height: fit-content;  
+    transition: 0.3s ease-in-out;  
+  }
+
+  .github-svg:hover {       
+    transform: scale(0.7);
+  }

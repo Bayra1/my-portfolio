@@ -1,30 +1,22 @@
 import { Contact_Forms, Navbar } from "@/components";
-import { SparklesCore } from "@/components/ui/sparkles";
-import "../../components/styles/bubbleButton.css";
 import { FacebookSvG, GithubSvG, TwitterSvG } from "@/components/SvG";
+import SparkeBackground from "@/components/background/SparkleBackgroun";
+import "../../components/styles/bubbleButton.css";
+import { FlipWords } from "@/components/ui/flip-words";
 
 const Contact_Me = () => {
   return (
     <div className="w-screen min-h-screen relative bg-black flex flex-col items-center p-4 overflow-hidden">
       <Navbar />
-      <div className="absolute inset-0 w-full h-full bg-black flex flex-col items-center justify-center">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={4.4}
-          particleDensity={10}
-          className="absolute inset-0 w-full h-full"
-          particleColor="#9EA1D4"
-        />
-      </div>
-      <div className="w-[1200px] relative mt-4 h-screen justify-center items-center flex z-10 flex-col">
+      <SparkeBackground />
+      <div className="w-[1200px] relative mt-[50px] h-fit  justify-center items-center flex z-10 flex-col">
+        <span className="text-4xl w-[500px] justify-center text-white flex flex-row italic">          
+          <FlipWords words={["Find-me", "Then-let's-create"]} /> <br />
+          <h2 className="text-white justify-center flex pl-4 pb-4 text-3xl italic underline-offset-8">
+            🔥
+          </h2>
+        </span>
         <Contact_Forms />
-        <div className="w-[200px] mt-7 flex flex-row justify-between">
-          <FacebookSvG />
-          <TwitterSvG />
-          <GithubSvG />
-        </div>
       </div>
     </div>
   );

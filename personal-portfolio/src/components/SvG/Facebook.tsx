@@ -1,8 +1,9 @@
+import "../styles/ScrollSection2.css"
 export const FacebookSvG = () => {
   return (
     <a href="" className="w-[35px] h-[35px] rounded-full flex justify-center items-center z-10 bg-white">
-      <svg
-        fill="black"
+      <svg className="facebook-svg"
+        fill="#"
         height="800px"
         width="800px"
         version="1.1"

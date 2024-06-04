@@ -1,6 +1,7 @@
 import { Navbar } from "@/components";
 import { GreetingWords } from "@/components/Text/Hello";
 import { SparklesBackground } from "@/components/ui/example";
+import About from "./About/page";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
     >      
       <Navbar />      
       <SparklesBackground/>
-      <GreetingWords/>
+      <GreetingWords/>      
     </div>
   );
 }
