@@ -1,4 +1,11 @@
+import { useContext } from "react";
+import { LanguageContext } from "../Context/languageContext";
+
 export const PineConeWithName = () => {
+
+  const languageContext = useContext(LanguageContext);
+  const { isEng } = languageContext;
+
   return (
     <div className="flex flex-row gap-2 ">
       <svg
@@ -18,8 +25,8 @@ export const PineConeWithName = () => {
         />
       </svg>
       <div className="flex flex-col relative">
-        <span className="text-white text-2xl italic">Sukhbaatar</span>
-        <span className="text-white text-base absolute top-7 left-9 italic">{`<Ikhbayar/>`}</span>
+        <span className="text-white text-2xl italic">{isEng === "EN" ? "Sukhbaatar" : "Сүхбаатар"}</span>
+        <span className="text-white text-base absolute top-7 left-9 italic">{isEng === "EN" ? `<Ikhbayar/>` : `<Ихбаяр/>`}</span>
       </div>
     </div>
   );

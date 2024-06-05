@@ -1,9 +1,10 @@
 "use client";
 import "../styles/ScrollStyle.css";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { AboutMe } from "../Text/About";
 import { FlipWords } from "../ui/flip-words";
+import { LanguageContext } from "../Context/languageContext";
 
 const ScrollSection_1 = () => {
   const { ref: leftRef, inView: leftInView } = useInView({
@@ -31,7 +32,11 @@ const ScrollSection_1 = () => {
     }
   }, [leftInView, rightInView]);
 
+  const languageContext = useContext(LanguageContext);
+  const { isEng } = languageContext;
+
   const words = ['Hey ?', "There"]
+  const mgl_words = ['Сайнуу ?', "Хө"]
 
   return (
     <section
@@ -43,7 +48,7 @@ const ScrollSection_1 = () => {
         className="left-section flex flex-col gap-3 mt-[120px] fade-in"
       >       
         <span className="text-4xl text-white flex flex-row italic">
-          <FlipWords words={words} /> <br />
+          <FlipWords words={isEng === "EN" ? words : mgl_words} /> <br />
         </span>
         <AboutMe />
         <img
