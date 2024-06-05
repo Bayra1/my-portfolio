@@ -43,7 +43,7 @@ export const Navbar = () => {
         <a href="https://www.canva.com/design/DAGGhhgv_3M/mbjIp3HWfBxmJVQTtEszaA/view?utm_content=DAGGhhgv_3M&utm_campaign=designshare&utm_medium=link&utm_source=editor">
           <AboutButton name="CV" path="/" />
         </a>
-        <HireMeButton name={isEng === "EN" ? "Contact_Me" : "Холбогдох"} path="Contact_Me" />
+        <HireMeButton name={isEng === "EN" ? "Contact" : "Холбогдох"} path="Contact_Me" />
         <button onClick={toggleLanguage}><ul><li className=" rounded-full">{isEng === "EN" ? "ENG" : "MНГЛ"}</li></ul></button>
       </div>
     </main>

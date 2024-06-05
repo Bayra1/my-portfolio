@@ -1,8 +1,10 @@
 "use client";
 import "../styles/ScrollSection2.css";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { FlipWords } from "../ui/flip-words";
+import { LanguageContext } from "../Context/languageContext";
+import { HobbyText } from "../Text";
 
 const ScrollSection_2 = () => {
   const { ref: leftRef, inView: leftInView } = useInView({
@@ -30,32 +32,26 @@ const ScrollSection_2 = () => {
     }
   }, [leftInView, rightInView]);
 
-  const words = ["My hobby", "here"];
+  const languageContext = useContext(LanguageContext);
+  const { isEng } = languageContext;
+
+  const eng_words = ["My Hobby", "Here"];
+  const mgl_words = ["Энд", "Миний Хобби"];
+
+  const enl_word_2 = ["Additional", "Benefits"]
+  const mgl_word_2 = ["Нэмэлт", " фактууд"]
 
   return (
     <section
       id="hidden"
       className="col1 w-full flex flex-row justify-between gap-5"
     >
-      <div
-        ref={leftRef}
-        className="left-section2 flex flex-col gap-3 fade-in2"
-      >
+      <div ref={leftRef} className="left-section2 flex flex-col gap-3 fade-in2">
         <span className="text-4xl text-white">
-          <FlipWords words={words} /> <br />
+          <FlipWords words={isEng === "EN" ? eng_words : mgl_words} /> <br />
         </span>
 
-        <ul className="w-[500px] text-white mt-[12px]">
-          <li>
-            I am passionate about basketball, which I enjoy both as a player and
-            a fan. Additionally, I have a keen interest in human psychology,
-            which drives me to read extensively on the subject to better
-            understand human behavior and mental processes. I am also
-            enthusiastic about exploring wildlife around the world, which
-            involves learning about diverse animal species and their natural
-            habitats.
-          </li>
-        </ul>
+        <HobbyText />
         <img
           style={{
             width: "500px",
@@ -82,12 +78,11 @@ const ScrollSection_2 = () => {
           alt="minion"
         />
         <span className="text-4xl text-white">
-          <FlipWords words={["Additional", "Benefits"]} /> <br />
+          <FlipWords words={isEng === "EN" ? enl_word_2 : mgl_word_2} /> <br />
         </span>
-        <ul className="w-[500px] text-white mt-[12px]">    
-        <li>IELTS 6</li>
-        <li>STRONG</li>
-        <li>VIGILANT</li>
+        <ul className="w-[500px] text-white mt-[12px]">
+          <li>{isEng === "EN" ? "IELTS 6" : "IELTS 6"}</li>          
+          <li>{isEng === "EN" ? "Determined" : "Хичээнгүй"}</li>          
         </ul>
       </div>
     </section>

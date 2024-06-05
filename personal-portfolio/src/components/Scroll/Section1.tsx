@@ -38,6 +38,9 @@ const ScrollSection_1 = () => {
   const words = ['Hey ?', "There"]
   const mgl_words = ['Сайнуу ?', "Хө"]
 
+  const eng_words_2 = ["Strong", "Points"]
+  const mgl_words_2 = ["Давуу", "Талууд"]
+
   return (
     <section
       id="hidden"
@@ -79,13 +82,13 @@ const ScrollSection_1 = () => {
           alt="minion"
         />
         <span className="text-4xl text-white">
-          <FlipWords words={['Strong', "Points"]} /> <br />
+          <FlipWords words={isEng === "EN" ? eng_words_2 : mgl_words_2} /> <br />
         </span>
-        <ul className="w-[500px] text-white mt-[12px]">
-          <li>Respectfulnesss</li>
-          <li>Responsible</li>
-          <li>TeamWork</li>
-          <li>Optimistic</li>
+        <ul className="w-[500px] text-white mt-[12px]">          
+          <li>{isEng === "EN" ? "Teamwork" : "Багаар ажиллах чадвартай"}</li>
+          <li>{isEng === "EN" ? "moralist" : "Хувийн ёс зүйтэй"}</li>
+          <li>{isEng === "EN" ? "Eager to learn" : "Шинэ зүйлс сурах дуртай"}</li>
+          <li>{isEng === "EN" ? "Receptive to feedback" : "Шүүмжлэл хүлээн авахдаа сайн"}</li>
         </ul>
       </div>
     </section>

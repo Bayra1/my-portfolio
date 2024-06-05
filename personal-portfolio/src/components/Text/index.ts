@@ -22,3 +22,4 @@ export * from "./Jest_Text";
 export * from "./GraphQl_Text";
 export * from "./Auth0";
 export * from "./Cypress_Text";
+export * from "./Hobby"
