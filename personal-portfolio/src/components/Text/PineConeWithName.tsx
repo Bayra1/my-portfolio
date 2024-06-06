@@ -1,13 +1,17 @@
-import { useContext } from "react";
+"use client";
+import { useContext, useState, useEffect } from "react";
 import { LanguageContext } from "../Context/languageContext";
 
 export const PineConeWithName = () => {
+  const { isEng } = useContext(LanguageContext);
+  const [clientIsEng, setClientIsEng] = useState(null);
 
-  const languageContext = useContext(LanguageContext);
-  const { isEng } = languageContext;
+  useEffect(() => {
+    setClientIsEng(isEng);
+  }, [isEng]);
 
   return (
-    <div className="flex flex-row gap-2 ">
+    <div className="flex flex-row gap-2">
       <svg
         width="33"
         height="27"
@@ -25,8 +29,12 @@ export const PineConeWithName = () => {
         />
       </svg>
       <div className="flex flex-col relative">
-        <span className="text-white text-2xl italic">{isEng === "EN" ? "Sukhbaatar" : "Сүхбаатар"}</span>
-        <span className="text-white text-base absolute top-7 left-9 italic">{isEng === "EN" ? `<Ikhbayar/>` : `<Ихбаяр/>`}</span>
+        {clientIsEng !== null && (
+          <>
+            <div className="text-white text-2xl italic">{clientIsEng === "EN" ? "Sukhbaatar" : "Сүхбаатар"}</div>
+            <div className="text-white text-base absolute top-7 left-9 italic">{clientIsEng === "EN" ? `<Ikhbayar/>` : `<Ихбаяр/>`}</div>
+          </>
+        )}
       </div>
     </div>
   );
