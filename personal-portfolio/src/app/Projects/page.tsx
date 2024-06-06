@@ -1,4 +1,5 @@
 import { Navbar } from "@/components";
+import { Todo } from "@/components/Projects/Todo";
 import { DisplayingProjects } from "@/components/Projects/project";
 import { SparklesCore } from "@/components/ui/sparkles";
 
@@ -17,8 +18,9 @@ const Projects = () => {
           particleColor="#9EA1D4"
         />
       </div>
-      <div className="w-[1200px] relative mt-4 h-full flex-wrap flex justify-between z-10">
+      <div className="w-[1200px] justify-center relative mt-4 h-full flex-wrap flex z-10">
         <DisplayingProjects />
+        {/* <Todo/> */}
       </div>
     </div>
   );

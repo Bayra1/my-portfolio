@@ -5,7 +5,11 @@ export const LanguageContext = createContext({} as any);
 
 export const LanguageContextProvider = ({ children }:any) => {
     const [isEng, setIsEng] = useState(() => {        
-        return localStorage.getItem('isEng') || "EN";
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('isEng') || "EN";
+        } else {
+            return ("EN")
+        }
     });
 
     const toggleLanguage = () => {        

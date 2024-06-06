@@ -1,10 +1,11 @@
 "use client"
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import "../components/styles/bubbleButton.css";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FacebookSvG, GithubSvG, TwitterSvG } from "./SvG";
+import { LanguageContext } from "./Context/languageContext";
 
 export const Contact_Forms = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -46,42 +47,45 @@ export const Contact_Forms = () => {
       );
   };
 
+  const languageContext = useContext(LanguageContext);
+  const { isEng } = languageContext;
+
   return (
     <form className="form-container" ref={form} onSubmit={sendEmail}>
       <div className="input-group">
-        <label className="input-label">Name</label>
+        <label className="input-label">{isEng === "EN" ?  "Name" : "Нэр"}</label>
         <input
           ref={name}
           className="input-field"
-          placeholder="Name"
+          placeholder={isEng === "EN" ?  "Name" : "Нэр"}
           type="text"
           name="user_name"
         />
       </div>
 
       <div className="input-group">
-        <label className="input-label">Email</label>
+        <label className="input-label">{isEng === "EN" ?  "Email" : "Имэйл"}</label>
         <input
           ref={email}
           className="input-field"
           type="email"
           name="user_email"
-          placeholder="Email"
+          placeholder={isEng === "EN" ?  "Email" : "Имэйл"}
         />
       </div>
 
       <div className="input-group">
-        <label className="input-label">Message</label>
+        <label className="input-label">{isEng === "EN" ?  "Message" : "мэссэж"}</label>
         <textarea
           ref={message}
           className="input-field textarea-field"
-          placeholder="Message"
+          placeholder={isEng === "EN" ?  "Message" : "мэссэж"}
           name="message"
         />
       </div>
 
       <button className="submit-button" type="submit">
-        Send
+        {isEng === "EN" ? "Send" : "Илгээх"}
       </button>
       <div className="w-full relative h-[50px]  justify-center items-center gap-10 flex flex-row">
           <FacebookSvG />
