@@ -1,5 +1,4 @@
 import { Navbar } from "@/components";
-import { Todo } from "@/components/Projects/Todo";
 import { DisplayingProjects } from "@/components/Projects/project";
 import { SparklesCore } from "@/components/ui/sparkles";
 

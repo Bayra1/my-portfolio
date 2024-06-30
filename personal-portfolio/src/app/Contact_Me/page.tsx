@@ -1,11 +1,10 @@
 "use client"
 import { Contact_Forms, Navbar } from "@/components";
-import { FacebookSvG, GithubSvG, TwitterSvG } from "@/components/SvG";
 import SparkeBackground from "@/components/background/SparkleBackgroun";
-import "../../components/styles/bubbleButton.css";
 import { FlipWords } from "@/components/ui/flip-words";
 import { LanguageContext } from "@/components/Context/languageContext";
 import { useContext } from "react";
+import "../../components/styles/bubbleButton.css";
 
 const eng_words = ["Find-me", "Then-let's-create"]
 const mgl_words = ["Холбогдох", "email-ээр"]

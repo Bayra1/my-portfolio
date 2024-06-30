@@ -1,7 +1,7 @@
 import { Navbar } from "@/components";
+import { SparklesCore } from "@/components/ui/sparkles";
 import ScrollSection_1 from "@/components/Scroll/Section1";
 import ScrollSection_2 from "@/components/Scroll/Section2";
-import { SparklesCore } from "@/components/ui/sparkles";
 
 const About = () => {
   return (
