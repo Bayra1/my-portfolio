@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import { useContext, useRef } from "react";
-import "../components/styles/bubbleButton.css";
-import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { FacebookSvG, GithubSvG, TwitterSvG } from "./SvG";
 import { LanguageContext } from "./Context/languageContext";
+import emailjs from "@emailjs/browser";
+import "../components/styles/bubbleButton.css";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Contact_Forms = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -35,7 +35,7 @@ export const Contact_Forms = () => {
       )
       .then(
         () => {
-          toast.success("Your message has been sent successfully!");   
+          toast.success("Your message has been sent successfully!");
           if (name.current) name.current.value = "";
           if (email.current) email.current.value = "";
           if (message.current) message.current.value = "";
@@ -53,33 +53,37 @@ export const Contact_Forms = () => {
   return (
     <form className="form-container" ref={form} onSubmit={sendEmail}>
       <div className="input-group">
-        <label className="input-label">{isEng === "EN" ?  "Name" : "Нэр"}</label>
+        <label className="input-label">{isEng === "EN" ? "Name" : "Нэр"}</label>
         <input
           ref={name}
           className="input-field"
-          placeholder={isEng === "EN" ?  "Name" : "Нэр"}
+          placeholder={isEng === "EN" ? "Name" : "Нэр"}
           type="text"
           name="user_name"
         />
       </div>
 
       <div className="input-group">
-        <label className="input-label">{isEng === "EN" ?  "Email" : "Имэйл"}</label>
+        <label className="input-label">
+          {isEng === "EN" ? "Email" : "Имэйл"}
+        </label>
         <input
           ref={email}
           className="input-field"
           type="email"
           name="user_email"
-          placeholder={isEng === "EN" ?  "Email" : "Имэйл"}
+          placeholder={isEng === "EN" ? "Email" : "Имэйл"}
         />
       </div>
 
       <div className="input-group">
-        <label className="input-label">{isEng === "EN" ?  "Message" : "мэссэж"}</label>
+        <label className="input-label">
+          {isEng === "EN" ? "Message" : "мэссэж"}
+        </label>
         <textarea
           ref={message}
           className="input-field textarea-field"
-          placeholder={isEng === "EN" ?  "Message" : "мэссэж"}
+          placeholder={isEng === "EN" ? "Message" : "мэссэж"}
           name="message"
         />
       </div>
@@ -88,10 +92,10 @@ export const Contact_Forms = () => {
         {isEng === "EN" ? "Send" : "Илгээх"}
       </button>
       <div className="w-full relative h-[50px]  justify-center items-center gap-10 flex flex-row">
-          <FacebookSvG />
-          <TwitterSvG />
-          <GithubSvG />
-        </div>
+        <FacebookSvG />
+        <TwitterSvG />
+        <GithubSvG />
+      </div>
       <ToastContainer position="top-center" />
     </form>
   );
