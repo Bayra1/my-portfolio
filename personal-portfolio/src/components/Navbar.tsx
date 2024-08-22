@@ -56,7 +56,7 @@ export const Navbar = () => {
             name={isEng === "EN" ? "Projects" : "Төслүүд"}
             path="Projects"
           />
-          <a href="https://www.canva.com/design/DAGGhhgv_3M/mbjIp3HWfBxmJVQTtEszaA/view?utm_content=DAGGhhgv_3M&utm_campaign=designshare&utm_medium=link&utm_source=editor">
+          <a href="https://www.canva.com/design/DAGNoP_-qEA/VCbheehJQwnQcyBSeZH1yg/view?utm_content=DAGNoP_-qEA&utm_campaign=designshare&utm_medium=link&utm_source=editor">
             <AboutButton name="CV" path="/" />
           </a>
           <HireMeButton
