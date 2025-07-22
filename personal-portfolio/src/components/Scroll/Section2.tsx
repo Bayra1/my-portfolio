@@ -81,7 +81,7 @@ const ScrollSection_2 = () => {
           <FlipWords words={isEng === "EN" ? enl_word_2 : mgl_word_2} /> <br />
         </span>
         <ul className="w-[500px] text-white mt-[12px]">
-          <li>{isEng === "EN" ? "IELTS 6" : "IELTS 6"}</li>          
+          <li>{isEng === "EN" ? "IELTS 7.5" : "IELTS 7.5"}</li>          
           <li>{isEng === "EN" ? "Determined" : "Хичээнгүй"}</li>          
         </ul>
       </div>
